@@ -1,5 +1,5 @@
 //
-//  HPTextView.h
+//  HPGrowingTextView.h
 //
 //  Created by Hans Pinckaers on 29-06-10.
 //
@@ -28,9 +28,8 @@
 #import <UIKit/UIKit.h>
 
 @class HPGrowingTextView;
-@class HPTextViewInternal;
 
-@protocol HPGrowingTextViewDelegate
+@protocol HPGrowingTextViewDelegate <NSObject>
 
 @optional
 - (BOOL)growingTextViewShouldBeginEditing:(HPGrowingTextView *)growingTextView;
@@ -49,48 +48,26 @@
 - (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView;
 @end
 
-@interface HPGrowingTextView : UIView <UITextViewDelegate> {
-	HPTextViewInternal *internalTextView;	
-	
-	int minHeight;
-	int maxHeight;
-	
-	//class properties
-	int maxNumberOfLines;
-	int minNumberOfLines;
-	
-	BOOL animateHeightChange;
-	
-	//uitextview properties
-	NSObject <HPGrowingTextViewDelegate> *__unsafe_unretained delegate;
-	UITextAlignment textAlignment; 
-	NSRange selectedRange;
-	BOOL editable;
-	UIDataDetectorTypes dataDetectorTypes;
-	UIReturnKeyType returnKeyType;
-    
-    UIEdgeInsets contentInset;
-}
+@interface HPGrowingTextView : UIView <UITextViewDelegate> 
 
 //real class properties
-@property int maxNumberOfLines;
-@property int minNumberOfLines;
-@property BOOL animateHeightChange;
-@property (nonatomic, strong) UITextView *internalTextView;	
+@property (nonatomic) int maxNumberOfLines;
+@property (nonatomic) int minNumberOfLines;
+@property (nonatomic) BOOL animateHeightChange;
+@property (unsafe_unretained, nonatomic) id<HPGrowingTextViewDelegate> delegate;
 
-
-//uitextview properties
-@property(unsafe_unretained) NSObject<HPGrowingTextViewDelegate> *delegate;
-@property(nonatomic,strong) NSString *text;
-@property(nonatomic,strong) UIFont *font;
-@property(nonatomic,strong) UIColor *textColor;
-@property(nonatomic) UITextAlignment textAlignment;    // default is UITextAlignmentLeft
-@property(nonatomic) NSRange selectedRange;            // only ranges of length 0 are supported
-@property(nonatomic,getter=isEditable) BOOL editable;
-@property(nonatomic) UIDataDetectorTypes dataDetectorTypes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
+// UITextView properties
+@property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) UIFont *font;
+@property (strong, nonatomic) UIColor *textColor;
+@property (nonatomic) UITextAlignment textAlignment;    // default is UITextAlignmentLeft
+@property (nonatomic) NSRange selectedRange;            // only ranges of length 0 are supported
+@property (nonatomic,getter=isEditable) BOOL editable;
+@property (nonatomic) UIDataDetectorTypes dataDetectorTypes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
 @property (nonatomic) UIReturnKeyType returnKeyType;
-@property (assign) UIEdgeInsets contentInset;
-@property(nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) UIEdgeInsets scrollIndicatorInsets;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
 
 //uitextview methods
 //need others? use .internalTextView

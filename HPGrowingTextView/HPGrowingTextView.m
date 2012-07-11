@@ -1,5 +1,5 @@
 //
-//  HPTextView.m
+//  HPGrowingTextView.m
 //
 //  Created by Hans Pinckaers on 29-06-10.
 //
@@ -25,27 +25,48 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //	THE SOFTWARE.
 
+#if !__has_feature(objc_arc)
+#  error Please compile this class with ARC (-fobjc-arc).
+#endif
+
 #import "HPGrowingTextView.h"
 #import "HPTextViewInternal.h"
 
-@interface HPGrowingTextView(private)
+@interface HPGrowingTextView () 
+
+@property (strong, nonatomic) HPTextViewInternal *internalTextView;	
+@property (nonatomic) int minHeight;
+@property (nonatomic) int maxHeight;
+
 -(void)commonInitialiser;
 -(void)resizeTextView:(NSInteger)newSizeH;
 -(void)growDidStop;
+
 @end
 
 @implementation HPGrowingTextView
-@synthesize internalTextView;
-@synthesize delegate;
 
-@synthesize font;
-@synthesize textColor;
-@synthesize textAlignment; 
-@synthesize selectedRange;
-@synthesize editable;
-@synthesize dataDetectorTypes; 
+// real class properties
+@synthesize maxNumberOfLines;
+@synthesize minNumberOfLines;
 @synthesize animateHeightChange;
-@synthesize returnKeyType;
+@synthesize delegate;
+@synthesize internalTextView;
+@synthesize minHeight;
+@synthesize maxHeight;
+
+// UITextView properties
+@dynamic    text;
+@dynamic    font;
+@dynamic    textColor;
+@dynamic    textAlignment; 
+@dynamic    selectedRange;
+@dynamic    editable;
+@dynamic    dataDetectorTypes; 
+@dynamic    returnKeyType;
+@synthesize contentInset;
+@dynamic    scrollIndicatorInsets;
+@dynamic    enablesReturnKeyAutomatically;
 
 // having initwithcoder allows us to use HPGrowingTextView in a Nib. -- aob, 9/2011
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -106,26 +127,6 @@
     r.size.width -= contentInset.left + contentInset.right;
     
     internalTextView.frame = r;
-}
-
--(void)setContentInset:(UIEdgeInsets)inset
-{
-    contentInset = inset;
-    
-    CGRect r = self.frame;
-    r.origin.y = inset.top - inset.bottom;
-    r.origin.x = inset.left;
-    r.size.width -= inset.left + inset.right;
-    
-    internalTextView.frame = r;
-    
-    [self setMaxNumberOfLines:maxNumberOfLines];
-    [self setMinNumberOfLines:minNumberOfLines];
-}
-
--(UIEdgeInsets)contentInset
-{
-    return contentInset;
 }
 
 -(void)setMaxNumberOfLines:(int)n
@@ -317,7 +318,7 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark UITextView properties
+#pragma mark - UITextView properties
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(void)setText:(NSString *)newText
@@ -423,6 +424,40 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+-(void)setContentInset:(UIEdgeInsets)inset
+{
+    contentInset = inset;
+    
+    CGRect r = self.frame;
+    r.origin.y = inset.top - inset.bottom;
+    r.origin.x = inset.left;
+    r.size.width -= inset.left + inset.right;
+    
+    internalTextView.frame = r;
+    
+    [self setMaxNumberOfLines:maxNumberOfLines];
+    [self setMinNumberOfLines:minNumberOfLines];
+}
+
+-(UIEdgeInsets)contentInset
+{
+    return contentInset;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)setScrollIndicatorInsets:(UIEdgeInsets)inset
+{
+    internalTextView.scrollIndicatorInsets = inset;
+}
+
+-(UIEdgeInsets)scrollIndicatorInsets
+{
+    return internalTextView.scrollIndicatorInsets;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 - (void)setEnablesReturnKeyAutomatically:(BOOL)enablesReturnKeyAutomatically
 {
   internalTextView.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically;
@@ -458,8 +493,7 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UITextViewDelegate
+#pragma mark - UITextViewDelegate methods.
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
