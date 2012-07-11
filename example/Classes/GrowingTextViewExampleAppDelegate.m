@@ -25,6 +25,10 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //	THE SOFTWARE.
 
+#if !__has_feature(objc_arc)
+#  error Please compile this class with ARC (-fobjc-arc).
+#endif
+
 #import "GrowingTextViewExampleAppDelegate.h"
 #import "GrowingTextViewExampleViewController.h"
 
