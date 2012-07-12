@@ -14,14 +14,6 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* GrowingTextViewExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GrowingTextViewExampleViewController.m */; };
-		3AC80F9613EC953D00712F9A /* MessageEntryBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC80F9213EC953D00712F9A /* MessageEntryBackground.png */; };
-		3AC80F9713EC953D00712F9A /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC80F9313EC953D00712F9A /* MessageEntryBackground@2x.png */; };
-		3AC80F9813EC953D00712F9A /* MessageEntryInputField.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC80F9413EC953D00712F9A /* MessageEntryInputField.png */; };
-		3AC80F9913EC953D00712F9A /* MessageEntryInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC80F9513EC953D00712F9A /* MessageEntryInputField@2x.png */; };
-		3ADB373513EE98D60006E262 /* MessageEntrySendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB373113EE98D60006E262 /* MessageEntrySendButton.png */; };
-		3ADB373613EE98D60006E262 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB373213EE98D60006E262 /* MessageEntrySendButton@2x.png */; };
-		3ADB373713EE98D60006E262 /* MessageEntrySendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB373313EE98D60006E262 /* MessageEntrySendButtonPressed.png */; };
-		3ADB373813EE98D60006E262 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB373413EE98D60006E262 /* MessageEntrySendButtonPressed@2x.png */; };
 		CED21A7215ADD056003AAA5B /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED21A6F15ADD056003AAA5B /* HPGrowingTextView.m */; };
 		CED21A7315ADD056003AAA5B /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = CED21A7115ADD056003AAA5B /* HPTextViewInternal.m */; };
 		CED21A8515ADEEFE003AAA5B /* MessageEntryBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CED21A7D15ADEEFE003AAA5B /* MessageEntryBackground.png */; };
@@ -46,14 +38,6 @@
 		28D7ACF70DDB3853001CB0EB /* GrowingTextViewExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingTextViewExampleViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* GrowingTextViewExample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingTextViewExample_Prefix.pch; sourceTree = "<group>"; };
-		3AC80F9213EC953D00712F9A /* MessageEntryBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryBackground.png; sourceTree = "<group>"; };
-		3AC80F9313EC953D00712F9A /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
-		3AC80F9413EC953D00712F9A /* MessageEntryInputField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryInputField.png; sourceTree = "<group>"; };
-		3AC80F9513EC953D00712F9A /* MessageEntryInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryInputField@2x.png"; sourceTree = "<group>"; };
-		3ADB373113EE98D60006E262 /* MessageEntrySendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButton.png; sourceTree = "<group>"; };
-		3ADB373213EE98D60006E262 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
-		3ADB373313EE98D60006E262 /* MessageEntrySendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButtonPressed.png; sourceTree = "<group>"; };
-		3ADB373413EE98D60006E262 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GrowingTextViewExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GrowingTextViewExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CED21A6E15ADD056003AAA5B /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
 		CED21A6F15ADD056003AAA5B /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
@@ -128,14 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				CED21A7C15ADEEFE003AAA5B /* GrowingTextViewImages */,
-				3ADB373113EE98D60006E262 /* MessageEntrySendButton.png */,
-				3ADB373213EE98D60006E262 /* MessageEntrySendButton@2x.png */,
-				3ADB373313EE98D60006E262 /* MessageEntrySendButtonPressed.png */,
-				3ADB373413EE98D60006E262 /* MessageEntrySendButtonPressed@2x.png */,
-				3AC80F9213EC953D00712F9A /* MessageEntryBackground.png */,
-				3AC80F9313EC953D00712F9A /* MessageEntryBackground@2x.png */,
-				3AC80F9413EC953D00712F9A /* MessageEntryInputField.png */,
-				3AC80F9513EC953D00712F9A /* MessageEntryInputField@2x.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* GrowingTextViewExample-Info.plist */,
 			);
@@ -229,14 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				3AC80F9613EC953D00712F9A /* MessageEntryBackground.png in Resources */,
-				3AC80F9713EC953D00712F9A /* MessageEntryBackground@2x.png in Resources */,
-				3AC80F9813EC953D00712F9A /* MessageEntryInputField.png in Resources */,
-				3AC80F9913EC953D00712F9A /* MessageEntryInputField@2x.png in Resources */,
-				3ADB373513EE98D60006E262 /* MessageEntrySendButton.png in Resources */,
-				3ADB373613EE98D60006E262 /* MessageEntrySendButton@2x.png in Resources */,
-				3ADB373713EE98D60006E262 /* MessageEntrySendButtonPressed.png in Resources */,
-				3ADB373813EE98D60006E262 /* MessageEntrySendButtonPressed@2x.png in Resources */,
 				CED21A8515ADEEFE003AAA5B /* MessageEntryBackground.png in Resources */,
 				CED21A8615ADEEFE003AAA5B /* MessageEntryBackground@2x.png in Resources */,
 				CED21A8715ADEEFE003AAA5B /* MessageEntryInputField.png in Resources */,
